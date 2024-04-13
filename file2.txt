@@ -1,0 +1,46 @@
+package practice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Webapp {
+
+	public static void main(String[] args) throws InterruptedException  {
+		
+		
+		System.setProperty("webdriver.FirefoxDriver.driver","C:\\Users\\parde\\OneDrive\\Desktop\\practice\\geckodriver");
+		
+		WebDriver driver = new FirefoxDriver();
+		
+	driver.get("https://www.facebook.com/");
+		driver.findElement(By.className("_42ft _4jy0 _6lti _4jy6 _4jy2 selected _51sy")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.className("firstname")).sendKeys("praju");
+		Thread.sleep(2000);
+		driver.findElement(By.className("lastname")).sendKeys("patil");
+		Thread.sleep(2000);
+		driver.findElement(By.className("reg_email__")).sendKeys("prajupatil23@gmail.com");
+		Thread.sleep(2000);
+		driver.findElement(By.className("reg_passwd__")).sendKeys("Patilpraju2023@");
+		Thread.sleep(2000);
+		driver.findElement(By.className("birthday_day")).sendKeys("19");
+		Thread.sleep(1000);
+		driver.findElement(By.className("birthday_month")).sendKeys("Aug");
+		Thread.sleep(1000);
+		driver.findElement(By.className("birthday_year")).sendKeys("2000");
+		Thread.sleep(1000);
+		driver.findElement(By.className("sex")).sendKeys("Female");
+		Thread.sleep(1000);
+		
+//		driver.findElement(By.className("email")).sendKeys("abhipardeshi19@gmail.com");
+//		Thread.sleep(2000);
+//		driver.findElement(By.className("pass")).sendKeys("Pramos1967@");
+//		Thread.sleep(2000);
+		driver.close();
+		System.out.print("success");
+	}
+
+}
